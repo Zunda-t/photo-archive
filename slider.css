@@ -1,0 +1,142 @@
+body {
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.container img {
+    width: 100%;
+}
+
+.item {
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.item p {
+    text-align: left;
+}
+
+.slider-info h2 {
+    margin: 0 0 5px 0;
+}
+
+.slider-info p {
+    margin: 3px 0;
+}
+
+.slider-title {
+    display: flex;
+    align-items: baseline;
+    gap: 15px;
+}
+
+.slider-title h2{
+    margin: 0;
+}
+.slider-title p {
+    margin: 0;
+}
+
+
+/* 作品情報 */
+.slider-info {
+    text-align: left;
+    margin: 30px 5% 20px;
+}
+
+.slider-info h2 {
+    margin: 0 0 5px 0;
+}
+
+.slider-info p {
+    margin: 3px 0;
+}
+
+
+/* タイトル横の情報 */
+.slider-title {
+    display: flex;
+    align-items: baseline;
+    gap: 15px;
+}
+
+.slider-title h2 {
+    margin: 0;
+}
+
+.slider-title p {
+    margin: 0;
+}
+
+
+/* ホームに戻るボタン */
+.back-home {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: 2px solid white;
+    border-radius: 8px;
+    margin: 25px 0;
+}
+
+
+/* 初回だけフェード */
+.route-first {
+    opacity: 0;
+    animation: routeFade 1s ease forwards;
+}
+
+@keyframes routeFade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.slider-fade {
+    opacity: 0;
+    animation: sliderFade 1s ease forwards;
+}
+
+@keyframes sliderFade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+

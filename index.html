@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>鉄道写真</title>
+
+    <style>
+    body {
+        text-align: center;
+        background-color: black;
+        color: white;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .item {
+        text-align: center;
+    }
+
+    .slideshow {
+        width: 70%;
+        max-width: 1200px;
+        margin: 30px auto;
+        position: relative;
+        aspect-ratio: 3 / 2;
+        overflow: hidden;
+    }
+
+    .slideshow img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: opacity 2s ease-in-out;
+    }
+
+    #slide1 {
+        opacity: 1;
+    }
+
+    #slide2 {
+        opacity: 0;
+    }
+
+    .item img {
+    border: 2px solid white;
+    box-sizing: border-box;
+    transition: transform 0.4s ease;
+}
+
+.item img:hover {
+    transform: scale(1.03);
+}
+
+
+
+.top-slider {
+    width: 90%;
+    margin: 30px auto;
+    overflow: hidden;
+    touch-action: pan-y;
+    user-select: none;
+}
+
+.top-track {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+}
+
+.top-item {
+    width: 300px;
+    flex-shrink: 0;
+    color: white;
+    text-decoration: none;
+}
+
+.top-item img {
+    width: 100%;
+    display: block;
+    border: 2px solid white;
+    box-sizing: border-box;
+}
+
+.top-item p {
+    text-align: center;
+    font-size: 19px;
+}
+
+@media (max-width: 768px) {
+    .top-item {
+        width: 170px;
+    }
+}
+
+
+
+.bottom-slider {
+    width: 90%;
+    margin: 30px auto;
+    overflow: hidden;
+    touch-action: pan-y;
+    user-select: none;
+}
+
+.bottom-track {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 20px;
+    width: max-content;
+}
+
+.bottom-item {
+    width: 300px;
+    flex: 0 0 300px;
+    color: white;
+    text-decoration: none;
+}
+
+.bottom-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 2px solid white;
+    box-sizing: border-box;
+}
+
+.bottom-item p {
+    text-align: center;
+    font-size: 19px;
+}
+
+@media (max-width: 768px) {
+    .bottom-item {
+        width: 170px;
+        flex-basis: 170px;
+    }
+}
+
+
+.first-visit {
+    opacity: 0;
+    animation: firstFadeIn 4s ease forwards;
+}
+
+/* 2回目以降 */
+.normal-visit {
+    opacity: 0;
+    animation: normalFadeIn 2s ease forwards;
+}
+
+@keyframes firstFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes normalFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.home-return {
+    opacity: 0;
+    transform: translateY(0);
+    animation: homeReturnFade 0.8s ease forwards;
+}
+
+@keyframes homeReturnFade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+img {
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+.top-slider,
+.bottom-slider {
+    opacity: 0;
+}
+
+.slider-show {
+    animation: sliderFadeIn 2s ease forwards;
+}
+
+@keyframes sliderFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.gallery-title {
+    opacity: 0;
+}
+
+.gallery-show {
+    animation: galleryFadeIn 3s ease forwards;
+}
+
+@keyframes galleryFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.route-section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+.route-section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.route-section.route-home-return {
+    opacity: 0;
+    transform: translateY(0);
+    animation: homeReturnFade 1.5s ease-in-out forwards;
+}
+</style>
+</head> 
+
+
+
+<body>
+
+<div class="slideshow">
+    <img id="slide1">
+    <img id="slide2">
+</div>
+
+    <h1 class="gallery-title">PHOTO ARCHIVE</h1>
+    <p></p>
+
+    
+
+<div class="top-slider">
+    <div class="top-track">
+
+
+        <a href="slider-kagoshima.html" class="top-item">
+            <img src="images/sliders/DSC05666.jpg">
+            <p>鹿児島</p>
+        </a>
+
+        <a href="slider-kagoshimatram.html" class="top-item">
+            <img src="images/kagoshimatram/DSC05434.jpg">
+            <p>鹿児島市電</p>
+        </a>
+
+        <a href="slider-miyazaki.html" class="top-item">
+            <img src="images/sliders/DSC00260 (1).jpg">
+            <p>宮崎</p>
+        </a>
+
+        <a href="slider-oyodo.html" class="top-item">
+            <img src="images/sliders/DSC04324.jpg">
+            <p>大淀川橋梁</p>
+        </a>
+
+        <a href="slider-tokyo.html" class="top-item">
+            <img src="images/sliders/DSC_0105.jpg">
+            <p>東京</p>
+        </a>
+
+        <a href="slider-flower.html" class="top-item">
+            <img src="images/sliders/DSC_2093.jpg">
+            <p>お花</p>
+        </a>
+
+        <a href="slider-bridge.html" class="top-item">
+            <img src="images/nippo/DSC_1043.jpg">
+            <p>鉄橋</p>
+        </a>
+
+    </div>
+</div>
+
+
+<div class="bottom-slider">
+    <div class="bottom-track">
+
+        <a href="slider-ds.html" class="bottom-item">
+            <img src="images/sliders/DSC_3655.jpg">
+            <p>D&S</p>
+        </a>
+
+        <a href="slider-4090.html" class="bottom-item">
+            <img src="images/4090/DSC_2125.jpg">
+            <p>4090レ</p>
+        </a>
+
+        <a href="slider-lex.html" class="bottom-item">
+            <img src="images/sliders/DSC_1700.jpg">
+            <p>特急列車</p>
+        </a>
+
+        <a href="slider-sl.html" class="bottom-item">
+            <img src="images/sliders/DSC_2024.jpg">
+            <p>SL</p>
+        </a>
+
+        <a href="slider-inspection.html" class="bottom-item">
+            <img src="images/sliders/DSC_0956.jpg">
+            <p>検測車</p>
+        </a>
+
+    </div>
+</div>
+
+
+
+
+
+<div class="route-section">
+
+
+
+
+    <h2>路線一覧</h2>
+    <div class="container">
+
+    
+        <div class="item">
+            <a href="kagoshimasen.html"onclick="saveRouteSectionState()">
+                <img src="images/cover/c_kagoshimasen.jpg" width="90%">
+            </a>
+        
+            <h3>鹿児島本線</h3>
+        </div>
+
+        <div class="item">
+            <a href="nippo.html"onclick="saveRouteSectionState()">
+                <img src="images/cover/c_nippo.jpg" width="90%">
+            </a>
+
+            <h3>日豊本線</h3>
+        </div>
+
+        <div class="item">
+            <a href="ibumaku.html"onclick="saveRouteSectionState()">
+                <img src="images/cover/c_ibumaku.jpg" width="90%">
+            </a>
+
+            <h3>指宿枕崎線</h3>
+        </div>
+
+        <div class="item">
+            <a href="nichinan.html"onclick="saveRouteSectionState()">
+                <img src="images/cover/c_nichinan.jpg" width="90%">
+            </a>
+
+            <h3>日南線</h3>
+        </div>
+
+        <div class="item">
+            <a href="hisaki.html"onclick="saveRouteSectionState()">
+                <img src="images/cover/c_hisaki.jpg" width="90%">
+            </a>
+
+            <h3>肥薩線・吉都線</h3>
+        </div>
+
+        <div class="item">
+            <a href="hisao.html"onclick="saveRouteSectionState()">
+                <img src="images/cover/c_hisao.jpg" width="90%">
+            </a>
+
+            <h3>肥薩おれんじ鉄道</h3>
+        </div>
+
+        <div class="item">
+            <a href="banetsusai.html"onclick="saveRouteSectionState()">
+                <img src="images/banetsusai/DSC_0806.jpg" width="90%">
+            </a>
+
+            <h3>磐越西線</h3>
+        </div>
+
+        <div class="item">
+            <a href="tohoku.html"onclick="saveRouteSectionState()">
+                <img src="images/tohoku/DSC_0236.jpg" width="90%">
+            </a>
+
+            <h3>東北本線・常磐線</h3>
+        </div>
+
+        <div class="item">
+            <a href="gatashin.html"onclick="saveRouteSectionState()">
+                <img src="images/cover/c_gatasihin.jpg" width="90%">
+            </a>
+
+            <h3>山形新幹線</h3>
+        </div>
+
+        <div class="item">
+            <a href="aterazawa.html"onclick="saveRouteSectionState()">
+                <img src="images/cover/c_aterasawa.jpg" width="90%">
+            </a>
+
+            <h3>左沢線</h3>
+        </div>
+
+        <div class="item">
+            <a href="sendaichika.html"onclick="saveRouteSectionState()">
+                <img src="images/cover/c_sendaichika.jpg" width="90%">
+            </a>
+
+            <h3>仙台市地下鉄</h3>
+        </div>
+
+        <div class="item">
+            <a href="senseki.html"onclick="saveRouteSectionState()">
+                <img src="images/cover/c_senseki.jpg" width="90%">
+            </a>
+
+
+            <h3>仙石線</h3>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
