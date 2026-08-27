@@ -3,6 +3,8 @@
     text-align: center;
     background-color: black;
     color: white;
+
+    font-family: "Noto Serif JP", serif;
 }
         .container {display: grid;grid-template-columns: 1fr 1fr;gap: 20px;}
 
@@ -18,6 +20,8 @@
     transform: translateY(30px);
     animation: fadeUp 1s ease forwards;
 }
+
+
 
 
 
