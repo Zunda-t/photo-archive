@@ -41,30 +41,19 @@ body {
     }
 }
 
-.item p {
-    text-align: left;
-}
-
-.slider-info h2 {
-    margin: 0 0 5px 0;
-}
-
-.slider-info p {
-    margin: 3px 0;
-}
-
 .slider-title {
-    display: flex;
-    align-items: baseline;
-    gap: 15px;
+    display: block;
 }
 
-.slider-title h2{
-    margin: 0;
+.slider-title h2 {
+    margin: 0 0 15px 0;
 }
+
 .slider-title p {
-    margin: 0;
+    margin: 15px 0;
 }
+
+
 
 
 /* 作品情報 */
@@ -82,20 +71,7 @@ body {
 }
 
 
-/* タイトル横の情報 */
-.slider-title {
-    display: flex;
-    align-items: baseline;
-    gap: 15px;
-}
 
-.slider-title h2 {
-    margin: 0;
-}
-
-.slider-title p {
-    margin: 0;
-}
 
 
 /* ホームに戻るボタン */
