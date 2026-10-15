@@ -29,7 +29,7 @@
 
         <div class="item">
         <img src="images/hisao/DSC_3519.jpg">
-            <p>ななつ星　霧島コース</p>
+            <p>ななつ星 霧島コース</p>
             <p>DF200-7000+77系客車</p> 
             <p>2024.3.27</p>
         </div>
@@ -90,6 +90,14 @@
         <a href="index.html" class="back-home"
    onclick="sessionStorage.setItem('returnHome', 'true')">← HOME</a>
     </p>
+
+    <script>
+    document.querySelectorAll('img').forEach((img, index) => {
+        if (index > 0) {
+            img.loading = 'lazy';
+        }
+    });
+    </script>
 
 </body>
 
