@@ -104,6 +104,15 @@
         <a href="index.html" class="back-home"
    onclick="sessionStorage.setItem('returnHome', 'true')">← HOME</a>
     </p>
+
+    <script>
+    document.querySelectorAll('img').forEach((img, index) => {
+        if (index > 0) {
+            img.loading = 'lazy';
+        }
+    });
+    </script>
+
 </body>
 
 </html>
