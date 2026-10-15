@@ -375,10 +375,6 @@ img {
             <p>4090レ</p>
         </a>
 
-        <a href="slider-lex.html" class="bottom-item">
-            <img src="images/sliders/DSC_1700.jpg">
-            <p>特急列車</p>
-        </a>
 
         <a href="slider-sl.html" class="bottom-item">
             <img src="images/sliders/DSC_2024.jpg">
@@ -515,18 +511,25 @@ img {
 
 </div>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
-<div class="instagram">
-    <a href="https://www.instagram.com/tori.dok2222/" target="_blank">
-        <img src="images/Instagram_Glyph_Gradient.png" alt="Instagram">
-        <span>Instagram</span>
-    </a>
-</div>
-    </a>
-</div>
+    <div class="instagram">
+        <a href="https://www.instagram.com/tori.dok2222/" target="_blank">
+            <img src="images/Instagram_Glyph_Gradient.png" alt="Instagram">
+            <span>Instagram</span>
+        </a>
+    
+    </div>
+        </a>
+    </div>
 
-
+    <script>
+    document.querySelectorAll('img').forEach((img, index) => {
+        if (index > 0) {
+            img.loading = 'lazy';
+        }
+    });
+    </script>
 
 </body>
 </html>
